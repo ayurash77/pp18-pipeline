@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "algorithm": "aes-256-gcm",
+  "kdf": "pbkdf2-sha256",
+  "iterations": 210000,
+  "salt": "mbVROce38cscoUx4v63P3Q==",
+  "iv": "Q7y3KeIeAl5SpGUS",
+  "tag": "icFJbKICrmMd88NnNLz7RQ==",
+  "data": "dlUUG3ze9hvURXesLBNyPcBM21wjDaB5hxwipKvUA+OgwYRWpmKFGSkFIfLQkotiaasjjULIwAlDUVE2WdHLBOu8UtqjtSrn3wAwR/32NXElEBcC+ttBlOXGEJS9Id3XJJFeIeNcrEfU4nXqXluJufmensSdww=="
+}
