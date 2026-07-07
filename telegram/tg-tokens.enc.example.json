@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "algorithm": "aes-256-gcm",
+  "kdf": "pbkdf2-sha256",
+  "iterations": 210000,
+  "salt": "base64-salt",
+  "iv": "base64-iv",
+  "tag": "base64-auth-tag",
+  "data": "base64-encrypted-data"
+}

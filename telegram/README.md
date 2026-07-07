@@ -13,33 +13,25 @@ This file is ignored by git. It should contain the bot token and chat id.
 Encrypted file for remote:
 
 ```text
-telegram/tg-tokens.txt.age
+telegram/tg-tokens.enc.json
 ```
 
-## Encrypt
+## Encrypt in Shotmate
 
-Install `age`, then run:
+1. Open Shotmate settings.
+2. Set `Папка данных` to this `pp18-pipeline` clone.
+3. Put real credentials into local `telegram/tg-tokens.txt`.
+4. Enter a password in the Telegram block.
+5. Click `Зашифровать`.
 
-```bash
-telegram/encrypt-tg-tokens.sh
-```
+The panel writes `telegram/tg-tokens.enc.json` and pushes it to the repository.
 
-Recipients are listed in:
+## Decrypt in Shotmate
 
-```text
-telegram/age-recipients.txt
-```
+1. Open Shotmate settings.
+2. Set `Папка данных` to this `pp18-pipeline` clone.
+3. Enter the same password in the Telegram block.
+4. Click `Расшифровать`.
 
-Use public SSH keys or age recipients there. The private key must stay local.
-
-## Decrypt
-
-```bash
-telegram/decrypt-tg-tokens.sh
-```
-
-By default it uses `~/.ssh/id_ed25519`. Override it with:
-
-```bash
-SHOTMATE_AGE_IDENTITY=/path/to/private/key telegram/decrypt-tg-tokens.sh
-```
+The panel pulls the latest repository state, decrypts `telegram/tg-tokens.enc.json`
+into local `telegram/tg-tokens.txt`, and imports Telegram settings.
