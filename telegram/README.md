@@ -1,11 +1,45 @@
 # Telegram settings
 
-Shotmate Panel can import Telegram credentials from this folder.
+Shotmate Panel imports Telegram credentials from this folder.
 
-Create a local, untracked file:
+Local plaintext file:
 
 ```text
-telegram/pp18_bot-token_chat-id.txt
+telegram/tg-tokens.txt
 ```
 
-The file should contain the bot token and chat id. Keep the real file out of git.
+This file is ignored by git. It should contain the bot token and chat id.
+
+Encrypted file for remote:
+
+```text
+telegram/tg-tokens.txt.age
+```
+
+## Encrypt
+
+Install `age`, then run:
+
+```bash
+telegram/encrypt-tg-tokens.sh
+```
+
+Recipients are listed in:
+
+```text
+telegram/age-recipients.txt
+```
+
+Use public SSH keys or age recipients there. The private key must stay local.
+
+## Decrypt
+
+```bash
+telegram/decrypt-tg-tokens.sh
+```
+
+By default it uses `~/.ssh/id_ed25519`. Override it with:
+
+```bash
+SHOTMATE_AGE_IDENTITY=/path/to/private/key telegram/decrypt-tg-tokens.sh
+```
